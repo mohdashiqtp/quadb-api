@@ -1,15 +1,15 @@
 const Sequelize = require('sequelize');
 require('dotenv').config();
 
-const sequelize = new Sequelize({
+// Set up the PostgreSQL connection string
+const connectionString = process.env.DATABASE_URL;
+
+const sequelize = new Sequelize(connectionString, {
   dialect: 'postgres',
-  host: 'localhost',
-  database: 'postgres',
-  username: 'postgres',
-  password: "9072553698",
-  port: 5432,
-  logging: true,
+dialectOptions: {
+  ssl: true,
+},
+logging: false,
 });
 
 module.exports = sequelize;
-
