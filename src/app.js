@@ -1,6 +1,5 @@
 const express = require('express');
 const morgan = require('morgan');
-const helmet = require('helmet');
 const { sequelize } = require('./models/index');
 const cors = require('cors');
 require('dotenv').config();
@@ -15,7 +14,6 @@ const insertRouter = require('./api/insert')
 
 
 app.use(morgan('dev'));
-app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
