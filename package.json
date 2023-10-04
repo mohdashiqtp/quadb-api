@@ -8,7 +8,6 @@
     "dev": "nodemon src/index.js",
     "lint": "eslint --fix src",
     "test": "jest",
-    "vercel-build" : "echo hello"
   },
   
   "keywords": [],
